@@ -1,0 +1,6 @@
+def bigger(m,n):
+    if m>n:
+        return m
+    else:
+        return n
+print(bigger(6,7))          
