@@ -1,0 +1,8 @@
+d=int(input("entrer un nombre: "))
+def print_numbers(d):
+    f=d+1
+    x=list(range(1,f))
+    for e in x:
+        print(e)
+print(print_numbers(d))
+
