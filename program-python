@@ -1,0 +1,23 @@
+url="""<a href='http://www.google.com'>cliquez</a>"
+    "c est un essai<a href='http://www.yahoo.fr'>connexion</a>"
+    "<a href='http://www.gmail.com'>se connecter</a>voila"""
+liste=[]
+def find_next(target):
+    while'a href' in target:
+        debut=target.find('<a href=')
+        quote1=target.find("'",debut)
+        quote2=target.find("'",quote1+1)
+        lien=target[quote1+1:quote2]
+        liste.append(lien)
+        target=target[quote2:]
+    return liste
+find_next(url)
+search=(input("entrer une lettre: ")).lower()
+a=0
+for e in liste:
+    if search in e:
+        print(e)
+        a=a+1
+print("liens_parcourus",len(liste))
+print("resultats_trouves",a)
+
