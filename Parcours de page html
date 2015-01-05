@@ -1,0 +1,24 @@
+fichier=open("html-cours.html","r")
+page=fichier.read()
+liste=[]
+def find_next(target):
+    while'a href' in target:
+        debut=target.find('<a href=')
+        quote1=target.find('"',debut)
+        quote2=target.find('"',quote1+1)
+        lien=target[quote1+1:quote2]
+        liste.append(lien)
+        target=target[quote2:]
+    return liste
+find_next(page)
+search=(input("entrer une lettre: ")).lower()
+b=0
+for e in liste:
+    if search in e:
+        print(e)
+        b=b+1
+#liens_parcourus=(len(liste))
+print("liens_parcourus",len(liste))
+print("resultats_trouves",b)
+
+# ce code python doit être enregistré dans le mêmê dossier que celui de html-cours.
